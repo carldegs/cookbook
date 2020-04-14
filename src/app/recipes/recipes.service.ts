@@ -11,18 +11,19 @@ export class RecipesService {
       'Dinuguan',
       'Masarap siya!',
       'https://www.lutongbahayrecipe.com/wp-content/uploads/2019/02/lutong-bahay-dinuguan-1-1200x755.jpg',
-      [
-        new Ingredient('Meat', 1),
-        new Ingredient('French Fries', 20),
-      ],
+      [new Ingredient('Meat', 1), new Ingredient('French Fries', 20)]
     ),
   ];
 
   constructor(private shoppingListService: ShoppingListService) {}
-  
+
   getRecipes = () => [...this.recipes];
 
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
-    this.shoppingListService.addIngredients(ingredients)
+    this.shoppingListService.addIngredients(ingredients);
   }
 }
